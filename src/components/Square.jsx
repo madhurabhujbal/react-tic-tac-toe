@@ -14,7 +14,7 @@ export default class Square extends React.Component {
         }}
       >
         {" "}
-        {this.props.value}{" "}
+        {this.state.value}{" "}
       </button>
     );
   }
