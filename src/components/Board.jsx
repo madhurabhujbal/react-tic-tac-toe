@@ -11,7 +11,7 @@ export default class Board extends React.Component {
   }
 
   handleClick(i) {
-    const squares = this.state.squares.slice();
+    const squares = this.state.squares.slice(); //slice() returns elements in array as a new array object
     squares[i] = "X";
     this.setState({ squares: squares });
   }
