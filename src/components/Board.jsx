@@ -1,5 +1,6 @@
 import React from "react";
 import Square from "./Square";
+import gameStyle from "../gameStyle.css";
 
 export default class Board extends React.Component {
   renderSquare(i) {
@@ -11,7 +12,7 @@ export default class Board extends React.Component {
     return (
       <div>
         <div className="status"> {status} </div>
-        <div className="board-row">
+        <div className="board-row" style={gameStyle}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
