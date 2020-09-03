@@ -43,7 +43,7 @@ export default class Board extends React.Component {
       status = "Winner : " + winner;
     } else {
       if (this.state.moves >= 9) {
-        status = "End of game";
+        status = <div className="status-end">End of game</div>;
       } else {
         status = "Next player : " + (this.state.xIsNext ? "X" : "O");
       }
