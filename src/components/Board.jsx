@@ -13,7 +13,7 @@ export default class Board extends React.Component {
 
   handleClick(i) {
     const squares = this.state.squares.slice(); //slice() returns elements in array as a new array object
-    if (calculateWinner || squares[i]) {
+    if (calculateWinner(squares) || squares[i]) {
       return;
     }
     squares[i] = this.state.xIsNext ? "X" : "O";
@@ -34,7 +34,7 @@ export default class Board extends React.Component {
     // const status = "Next player : " + (this.state.xIsNext ? "X" : "O");
     let status;
     if (winner) {
-      status = "Winner " + winner;
+      status = "Winner : " + winner;
     } else {
       status = "Next player : " + (this.state.xIsNext ? "X" : "O");
     }
@@ -79,6 +79,6 @@ function calculateWinner(squares) {
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
-    return null;
   }
+  return null;
 }
