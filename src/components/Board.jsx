@@ -3,15 +3,6 @@ import Square from "./Square";
 import gameStyle from "../gameStyle.css";
 
 export default class Board extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      squares: Array(9).fill(null),
-      moves: 0,
-      xIsNext: true,
-    };
-  }
-
   handleClick(i) {
     const squares = this.state.squares.slice(); //slice() returns elements in array as a new array object
     if (calculateWinner(squares) || squares[i]) {
