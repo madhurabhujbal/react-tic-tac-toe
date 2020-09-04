@@ -54,7 +54,7 @@ export default class Game extends Component {
     return (
       <div className="game" style={gameStyle}>
         <div className="game-info">
-          <div> {status} </div>
+          <div className="status"> {status} </div>
           <ol></ol>
           <div className="game-board">
             <Board
