@@ -5,8 +5,9 @@ import gameStyle from "../gameStyle.css";
 export default class Game extends Component {
   constructor(props) {
     super(props);
-    // let moves = this.state.moves + 1;
+    let moves = 0;
     this.state = {
+      moves: moves,
       history: [
         {
           squares: Array(9).fill(null),
@@ -26,6 +27,7 @@ export default class Game extends Component {
     squares[i] = this.state.xIsNext ? "X" : "O";
     let moves = this.state.moves + 1;
     this.setState({
+      moves: moves,
       history: history.concat([
         {
           squares: squares,
