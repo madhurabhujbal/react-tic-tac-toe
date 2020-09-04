@@ -16,9 +16,26 @@ export default class Game extends Component {
     };
   }
 
-  render() {
+  handleClick(i) {
     const history = this.state.history;
     const current = history[history.length - 1];
+    const squares = current.squares.slice(); //slice() returns elements in array as a new array object
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    squares[i] = this.state.xIsNext ? "X" : "O";
+    let moves = this.state.moves + 1;
+    this.setState({
+      history: history.concat([
+        {
+          squares: squares,
+        },
+      ]),
+      xIsNext: !xIsNext,
+    });
+  }
+
+  render() {
     const winner = calculateWinner(current.squares);
     let status;
     if (winner) {
