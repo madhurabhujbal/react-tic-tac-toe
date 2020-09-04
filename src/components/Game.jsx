@@ -31,7 +31,7 @@ export default class Game extends Component {
           squares: squares,
         },
       ]),
-      xIsNext: !xIsNext,
+      xIsNext: !this.state.xIsNext,
     });
   }
 
