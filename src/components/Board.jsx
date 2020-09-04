@@ -27,22 +27,8 @@ export default class Board extends React.Component {
   }
 
   render() {
-    const winner = calculateWinner(this.state.squares);
-    // const status = "Next player : " + (this.state.xIsNext ? "X" : "O");
-    let status;
-    if (winner) {
-      status = "Winner : " + winner;
-    } else {
-      if (this.state.moves >= 9) {
-        status = <div className="status-end">End of game</div>;
-      } else {
-        status = "Next player : " + (this.state.xIsNext ? "X" : "O");
-      }
-    }
-
     return (
       <div>
-        <div className="status"> {status} </div>
         <div className="board-row" style={gameStyle}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
