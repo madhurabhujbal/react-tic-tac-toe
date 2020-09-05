@@ -41,15 +41,15 @@ export default class Game extends Component {
     const history = this.state.history;
     const current = history[history.length - 1];
     const winner = calculateWinner(current.squares);
-    // const moves = history.map((step, move) => {
-    //   const desc = move ? "Go to move #" + move : "Go to Game start";
-    // });
+    const moves = history.map((step, move) => {
+      const desc = move ? "Go to move #" + move : "Go to Game start";
+      return (
+        <li>
+          <button onClick={() => this.jumpTo(move)}> {desc} </button>
+        </li>
+      );
+    });
 
-    // return (
-    //   <li>
-    //     <button onClick={() => this.jumpTo(move)}> {desc} </button>
-    //   </li>
-    // );
     let status;
     if (winner) {
       status = "Winner : " + winner;
@@ -64,7 +64,7 @@ export default class Game extends Component {
       <div className="game" style={gameStyle}>
         <div className="game-info">
           <div className="status"> {status} </div>
-          {/* <ol> {moves} </ol> */}
+          <ol> </ol>
           <div className="game-board">
             <Board
               squares={current.squares}
