@@ -64,7 +64,7 @@ export default class Game extends Component {
       <div className="game" style={gameStyle}>
         <div className="game-info">
           <div className="status"> {status} </div>
-          <ol> </ol>
+          <ol> {moves} </ol>
           <div className="game-board">
             <Board
               squares={current.squares}
