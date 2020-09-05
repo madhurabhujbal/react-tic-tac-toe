@@ -5,9 +5,9 @@ import gameStyle from "../gameStyle.css";
 export default class Game extends Component {
   constructor(props) {
     super(props);
-    let moves = 0;
+    let squaresClicked = 0;
     this.state = {
-      moves: moves,
+      squaresClicked: squaresClicked,
       history: [
         {
           squares: Array(9).fill(null),
@@ -25,9 +25,9 @@ export default class Game extends Component {
       return;
     }
     squares[i] = this.state.xIsNext ? "X" : "O";
-    let moves = this.state.moves + 1;
+    let squaresClicked = this.state.squaresClicked + 1;
     this.setState({
-      moves: moves,
+      squaresClicked: squaresClicked,
       history: history.concat([
         {
           squares: squares,
@@ -41,6 +41,15 @@ export default class Game extends Component {
     const history = this.state.history;
     const current = history[history.length - 1];
     const winner = calculateWinner(current.squares);
+    const moves = history.map((step, move) => {
+      const desc = move ? "Go to move #" + move : "Go to Game start";
+      return (
+        <li>
+          <button onClick={() => this.jumpTo(move)}> {desc} </button>
+        </li>
+      );
+    });
+
     let status;
     if (winner) {
       status = "Winner : " + winner;
@@ -55,7 +64,7 @@ export default class Game extends Component {
       <div className="game" style={gameStyle}>
         <div className="game-info">
           <div className="status"> {status} </div>
-          <ol></ol>
+          <ol> {moves} </ol>
           <div className="game-board">
             <Board
               squares={current.squares}
