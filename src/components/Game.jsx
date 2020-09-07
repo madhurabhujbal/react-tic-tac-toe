@@ -74,12 +74,12 @@ export default class Game extends Component {
         <div className="game-info">
           <div className="status"> {status} </div>
           <div className="game-board">
-            <ol> {moves} </ol>
             <Board
               squares={current.squares}
               onClick={(i) => this.handleClick(i)}
             />
           </div>
+          <ol> {moves} </ol>
         </div>
       </div>
     );
