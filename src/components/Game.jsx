@@ -73,13 +73,17 @@ export default class Game extends Component {
       <div className="game" style={gameStyle}>
         <div className="game-info">
           <div className="status"> {status} </div>
-          <div className="game-board">
-            <Board
-              squares={current.squares}
-              onClick={(i) => this.handleClick(i)}
-            />
+          <div className="container">
+            <div className="row">
+              <div className="game-board">
+                <Board
+                  squares={current.squares}
+                  onClick={(i) => this.handleClick(i)}
+                />
+              </div>
+              <ol> {moves} </ol>
+            </div>
           </div>
-          <ol> {moves} </ol>
         </div>
       </div>
     );
