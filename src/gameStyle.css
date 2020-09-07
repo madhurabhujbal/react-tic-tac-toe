@@ -58,6 +58,7 @@ ul {
 
 .moves-history button {
   border: 1px solid;
+  margin-bottom: 3px;
 }
 
 .moves-history button:hover {
