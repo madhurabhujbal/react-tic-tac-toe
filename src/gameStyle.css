@@ -15,7 +15,8 @@ ul {
 
 .status {
   margin-bottom: 10px;
-  text-align: center;
+  margin-left: 4px;
+  /* text-align: center; */
 }
 
 .status-end {
