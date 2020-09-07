@@ -56,5 +56,9 @@ ul {
 }
 
 .moves-history button {
-  border: none;
+  border: 1px solid;
+}
+
+.moves-history button:hover {
+  background-color: rgb(190, 186, 186);
 }
