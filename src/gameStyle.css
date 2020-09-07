@@ -3,7 +3,6 @@ body {
   margin: 20px;
 }
 
-ol,
 ul {
   padding-left: 30px;
 }
@@ -54,4 +53,8 @@ ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+.moves-history button {
+  border: none;
 }
