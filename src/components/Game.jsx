@@ -63,7 +63,7 @@ export default class Game extends Component {
     if (winner) {
       status = "Winner : " + winner;
     } else {
-      if (this.state.moves >= 9) {
+      if (this.state.squaresClicked >= 9) {
         status = <div className="status-end">End of game</div>;
       } else {
         status = "Next player : " + (this.state.xIsNext ? "X" : "O");
