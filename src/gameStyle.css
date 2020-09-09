@@ -21,12 +21,42 @@ ul {
 .status-end {
   margin-top: 5px;
   margin-left: 4px;
+  animation: end-status 0.8s ease-in-out infinite;
   color: red;
+}
+
+@keyframes end-status {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .winner {
   margin-left: 12px;
   color: rgb(28, 180, 28);
+  animation: winner-status 0.8s ease-in-out infinite;
+}
+
+@keyframes winner-status {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .square {
